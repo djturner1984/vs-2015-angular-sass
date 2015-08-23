@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4D445DEB-2059-4A12-8A62-2FA7CBC99ABD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{87A167ED-5540-4DA0-8528-E164C21280C5}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Project.Name.Api", "src\Project.Name.Api\Project.Name.Api.xproj", "{0F4D9DDE-C679-4809-92DE-0C2CF5010CF0}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Project.Name.Web", "src\Project.Name.Web\Project.Name.Web.xproj", "{CE0B742F-6465-4795-ACD1-069D556080BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F4D9DDE-C679-4809-92DE-0C2CF5010CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F4D9DDE-C679-4809-92DE-0C2CF5010CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F4D9DDE-C679-4809-92DE-0C2CF5010CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F4D9DDE-C679-4809-92DE-0C2CF5010CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0B742F-6465-4795-ACD1-069D556080BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0B742F-6465-4795-ACD1-069D556080BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0B742F-6465-4795-ACD1-069D556080BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0B742F-6465-4795-ACD1-069D556080BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F4D9DDE-C679-4809-92DE-0C2CF5010CF0} = {4D445DEB-2059-4A12-8A62-2FA7CBC99ABD}
+		{CE0B742F-6465-4795-ACD1-069D556080BA} = {4D445DEB-2059-4A12-8A62-2FA7CBC99ABD}
+	EndGlobalSection
+EndGlobal
