@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='less' Clean='clean' />
+﻿/// <binding AfterBuild='sass' Clean='clean' />
 
 var gulp = require("gulp"),
     rimraf = require("rimraf"),
@@ -6,8 +6,7 @@ var gulp = require("gulp"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify"),
     project = require("./project.json");
-
-var less = require('gulp-less');
+var sass = require('gulp-sass');
 var path = require('path');
 var plumber = require('gulp-plumber');
 
@@ -18,17 +17,19 @@ var paths = {
 paths.js = paths.webroot + "js/**/*.js";
 paths.minJs = paths.webroot + "js/**/*.min.js";
 paths.css = paths.webroot + "css/**/*.css";
+paths.sass = paths.webroot + "css/sass/**/*.scss";
 paths.minCss = paths.webroot + "css/**/*.min.css";
 paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 
-gulp.task('less', function () {
-    return gulp.src(paths.webroot + 'css/less/**/*.less')
-    .pipe(plumber())
-      .pipe(less({
-          paths: [path.join(__dirname, 'less', 'includes')]
-      }))
-      .pipe(gulp.dest(paths.webroot + 'css/'));
+gulp.task('sass', function () {
+    gulp.src(paths.sass)
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest(paths.webroot + "css/"));
+});
+
+gulp.task('sass:watch', function () {
+    gulp.watch(paths.sass, ['sass']);
 });
 
 gulp.task("clean:js", function (cb) {
