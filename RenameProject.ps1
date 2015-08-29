@@ -10,6 +10,13 @@ Get-ChildItem -filter "*Project.Name*" -Recurse | Rename-Item -NewName { $_.Name
 $files=get-childitem . *.* -rec | where { ! $_.PSIsContainer }
 foreach ($file in $files)
 {
-    (Get-Content $file.PSPath) | Foreach-Object {$_ -replace "Project.Name", $name} | Set-Content $file.PSPath
+    If ($file.PSPath -Match ".ps1")
+    {
+        Write-Host $file.PSPath ' is a powershell file so ignoring it'
+    }
+    Else
+    {
+        (Get-Content $file.PSPath) | Foreach-Object {$_ -replace "Project.Name", $name} | Set-Content $file.PSPath
+    }
 }
 
